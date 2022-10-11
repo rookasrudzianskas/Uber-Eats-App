@@ -1,13 +1,13 @@
 import React from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
-const RestaurantCard = () => {
+const RestaurantCard = ({restaurant}) => {
     return (
         <TouchableOpacity activeOpacity={0.7} className="mx-3 my-2 bg-gray-100 p-2 rounded">
-            <Image className="w-full h-56" source={{uri: 'https://www.supermarketnews.com/sites/supermarketnews.com/files/styles/article_featured_retina/public/Uber%20Eats-grocery%20delivery-bag%20closeup.png?itok=rwDPx_XH'}} />
+            <Image className="w-full h-56" source={{uri: restaurant?.image}} />
             <View className="flex-row mt-2 justify-between">
                 <View className="space-y-1">
-                    <Text className="text-gray-900 font-[600] text-[18px]">Brother Burgers</Text>
+                    <Text className="text-gray-900 font-[600] text-[18px]">{restaurant?.name}</Text>
                     <View className="flex-row items-center">
                         <Text className="text-gray-400 text-[15px]">1.4</Text>
                         <Text className="text-gray-400 text-[15px]">•</Text>

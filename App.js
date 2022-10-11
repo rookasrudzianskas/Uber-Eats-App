@@ -6,10 +6,10 @@ import Restaurants from './src/assets/data/restaurants.json'
 export default function App() {
     return (
         <View className="h-screen mt-10">
-            <RestaurantItem />
-            <RestaurantItem />
-            <RestaurantItem />
-            <RestaurantItem />
+            <RestaurantItem restaurant={Restaurants[0]} />
+            <RestaurantItem restaurant={Restaurants[1]} />
+            <RestaurantItem restaurant={Restaurants[2]} />
+            <RestaurantItem restaurant={Restaurants[3]} />
             <StatusBar style="auto" />
         </View>
     );
