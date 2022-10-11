@@ -5,7 +5,7 @@ import RestaurantItem from "../../components/RestaurantItem";
 
 const HomeScreen = () => {
     return (
-        <View>
+        <View className="mx-4">
             <FlatList data={Restaurants} showsVerticalScrollIndicator={false} renderItem={({item}) => <RestaurantItem restaurant={item} />} keyExtractor={(item) => item.id} />
         </View>
     );

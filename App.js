@@ -3,14 +3,15 @@ import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-n
 import Restaurants from './src/assets/data/restaurants.json'
 import { LogBox } from 'react-native';
 import HomeScreen from "./src/screens/HomeScreen";
+import RestaurantDetails from "./src/screens/RestaurantDetails";
 
 LogBox.ignoreLogs(['SplashScreen.show']);
 
 export default function App() {
     return (
-        <View className="h-screen mt-10">
+        <View className="h-screen">
             {/*<HomeScreen />*/}
-
+            <RestaurantDetails />
             <StatusBar style="auto" />
         </View>
     );

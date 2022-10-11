@@ -5,7 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 const RestaurantCard = ({restaurant}) => {
     const [clicked, setClicked] = useState(false);
     return (
-        <TouchableOpacity activeOpacity={0.7} className="mx-3 my-2 bg-gray-100 p-2 rounded">
+        <TouchableOpacity activeOpacity={0.7} className="my-2 bg-gray-100 p-2 rounded">
             <Image className="w-full h-56 relative" source={{uri: restaurant?.image}} />
             <TouchableOpacity onPress={() => setClicked(!clicked)} activeOpacity={0.7} className="absolute top-5 right-4">
                 {clicked ? <AntDesign name="hearto" size={20} color="white" /> : <AntDesign name="heart" size={20} color="red" />}
