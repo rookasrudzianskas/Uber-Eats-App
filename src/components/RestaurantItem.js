@@ -1,10 +1,14 @@
 import React from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 const RestaurantCard = ({restaurant}) => {
     return (
         <TouchableOpacity activeOpacity={0.7} className="mx-3 my-2 bg-gray-100 p-2 rounded">
-            <Image className="w-full h-56" source={{uri: restaurant?.image}} />
+            <Image className="w-full h-56 relative" source={{uri: restaurant?.image}} />
+            <TouchableOpacity activeOpacity={0.7} className="absolute top-3 right-2">
+                <AntDesign name="hearto" size={24} color="white" />
+            </TouchableOpacity>
             <View className="flex-row mt-2 justify-between">
                 <View className="space-y-1">
                     <Text className="text-gray-900 font-[600] text-[18px]">{restaurant?.name}</Text>
