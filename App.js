@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import RestaurantItem from "./src/components/RestaurantItem";
 import Restaurants from './src/assets/data/restaurants.json'
 import { LogBox } from 'react-native';
 import HomeScreen from "./src/screens/HomeScreen";
