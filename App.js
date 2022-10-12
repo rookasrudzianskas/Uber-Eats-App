@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import RootNavigator from "./src/navigation";
 import { Amplify } from 'aws-amplify'
 import awsconfig from './src/aws-exports'
+import {withAuthenticator} from "aws-amplify-react-native/src/Auth";
 
 Amplify.configure({
     ...awsconfig,
