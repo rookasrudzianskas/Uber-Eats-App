@@ -7,7 +7,9 @@ const RestaurantCard = ({restaurant}) => {
     const navigation = useNavigation();
     const [clicked, setClicked] = useState(false);
     return (
-        <TouchableOpacity onPress={() => navigation.navigate('Restaurant')} activeOpacity={0.7} className="my-2 bg-gray-100 p-2 rounded">
+        <TouchableOpacity onPress={() => navigation.navigate('Restaurant', {
+            id: restaurant.id
+        })} activeOpacity={0.7} className="my-2 bg-gray-100 p-2 rounded">
             <Image className="w-full h-56 relative" source={{uri: restaurant?.image}} />
             <TouchableOpacity onPress={() => setClicked(!clicked)} activeOpacity={0.7} className="absolute top-5 right-4">
                 {clicked ? <AntDesign name="hearto" size={20} color="white" /> : <AntDesign name="heart" size={20} color="red" />}
