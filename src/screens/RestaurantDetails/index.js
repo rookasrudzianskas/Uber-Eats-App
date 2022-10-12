@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity, FlatList} from 'react-native';
 import {AntDesign, FontAwesome} from "@expo/vector-icons";
 import Restaurants from '../../assets/data/restaurants.json';
 import {StatusBar} from "expo-status-bar";
@@ -28,8 +28,7 @@ const RestaurantDetails = () => {
                 <Text className="text-lg font-[600] text-gray-600 mx-4 mt-2">Menu</Text>
             </View>
             <View>
-                <DishListItem dish={restaurant.dishes[0]} />
-                <DishListItem dish={restaurant.dishes[0]} />
+                <FlatList contentContainerStyle={{paddingBottom: 100}} data={restaurant.dishes} renderItem={({item}) => <DishListItem dish={item} />} />
             </View>
         </View>
     );
