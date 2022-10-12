@@ -9,12 +9,16 @@ const DishDetailsScreen = () => {
 
     const onPlus = () => {
         // make it always positive number
-        setQuantity(Math.max(0, quantity + 1));
+        setQuantity(Math.max(1, quantity + 1));
     }
 
     const onMinus = () => {
         // make it always positive number
-        setQuantity(Math.max(0, quantity - 1));
+        setQuantity(Math.max(1, quantity - 1));
+    }
+
+    const getTotal = () => {
+        return (quantity * dish?.price).toFixed(2);
     }
 
     return (
@@ -43,7 +47,7 @@ const DishDetailsScreen = () => {
             <View className="absolute bottom-10 right-1 left-1 flex-row items-center justify-between mx-4 bg-black py-4 rounded-sm">
                 <View></View>
                 <Text className="text-white text-[15px] font-semibold ml-16">Add {quantity} to basket</Text>
-                <Text className="text-white mr-3">23.90 $</Text>
+                <Text className="text-white mr-3">{getTotal()} $</Text>
             </View>
         </View>
     );
