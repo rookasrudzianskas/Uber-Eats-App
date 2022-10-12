@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import OrderListItem from "../../components/OrderListItem";
-
+import orders from '../../assets/data/orders.json';
 const OrdersScreen = () => {
     return (
         <View>
