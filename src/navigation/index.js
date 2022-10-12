@@ -55,7 +55,9 @@ const HomeStackComponent = () => {
                     </TouchableOpacity>
                 )
             }} />
-            <HomeStack.Screen name="Restaurant" component={RestaurantDetails} />
+            <HomeStack.Screen name="Restaurant" component={RestaurantDetails} options={{
+                headerShown: false
+            }} />
             <HomeStack.Screen name="Dish" component={DishDetailsScreen} options={{
                 headerShown: false
             }} />

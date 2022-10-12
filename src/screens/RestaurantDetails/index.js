@@ -12,7 +12,7 @@ const RestaurantDetails = () => {
     const navigation = useNavigation();
     const route = useRoute();
     const id = route.params?.id;
-    console.warn(id)
+    // console.warn(id)
     return (
         <View className="relative bg-gray-100 h-screen">
             <StatusBar style="light" />
