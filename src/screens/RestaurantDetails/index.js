@@ -20,6 +20,7 @@ const RestaurantDetails = () => {
                     <FontAwesome name="star" style={{marginVertical: 6}} size={17} color="#ffaa00" />
                 </View>
             </View>
+            <View className="border-b border-gray-300 border mt-5"/>
         </View>
     );
 };
