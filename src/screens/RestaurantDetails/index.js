@@ -23,7 +23,9 @@ const RestaurantDetails = () => {
                 </View>
             </View>
             <View className="border-b border-gray-300 border mt-5"/>
-
+            <View>
+                <Text className="text-lg font-[600] text-gray-600 mx-4 mt-2">Menu</Text>
+            </View>
         </View>
     );
 };
