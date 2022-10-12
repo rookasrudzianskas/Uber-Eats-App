@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {AntDesign, FontAwesome} from "@expo/vector-icons";
 
-const Header = ({restaurant}) => {
+const RestaurantHeader = ({restaurant}) => {
     return (
         <>
             <Image className="w-[100%]" style={{aspectRatio: 9 / 5}} source={{uri: restaurant?.image}} />
@@ -24,4 +24,4 @@ const Header = ({restaurant}) => {
     );
 };
 
-export default Header;
+export default RestaurantHeader;

@@ -4,7 +4,7 @@ import {AntDesign, FontAwesome} from "@expo/vector-icons";
 import Restaurants from '../../assets/data/restaurants.json';
 import {StatusBar} from "expo-status-bar";
 import DishListItem from "../../components/DishListItem";
-import Header from "./Header";
+import RestaurantHeader from "./Header";
 
 const RestaurantDetails = () => {
     const restaurant = Restaurants[0];
@@ -15,8 +15,10 @@ const RestaurantDetails = () => {
                 <AntDesign name="arrowleft" size={24} color="black" />
             </TouchableOpacity>
             <View>
-                <FlatList ListHeaderComponent={() => (
-                    <Header restaurant={restaurant} />
+                <FlatList
+                    showsVerticalScrollIndicator={false}
+                    ListHeaderComponent={() => (
+                    <RestaurantHeader restaurant={restaurant} />
                 )} data={restaurant.dishes} renderItem={({item}) => <DishListItem dish={item} />} />
             </View>
         </View>
