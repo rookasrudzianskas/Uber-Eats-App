@@ -7,6 +7,7 @@ import RestaurantDetails from "./src/screens/RestaurantDetails";
 import DishDetailsScreen from "./src/screens/DishDetailsScreen";
 import Basket from "./src/screens/Basket";
 import OrdersScreen from "./src/screens/OrdersScreen";
+import OrderDetails from "./src/screens/OrderDetails";
 
 LogBox.ignoreLogs(['SplashScreen.show']);
 
@@ -17,7 +18,8 @@ export default function App() {
             {/*<RestaurantDetails />*/}
             {/*<DishDetailsScreen />*/}
             {/*<Basket />*/}
-            <OrdersScreen />
+            {/*<OrdersScreen />*/}
+            <OrderDetails />
             <StatusBar style="auto" />
         </View>
     );
