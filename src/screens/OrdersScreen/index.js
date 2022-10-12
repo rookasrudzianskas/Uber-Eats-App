@@ -10,8 +10,8 @@ const OrdersScreen = () => {
             </View>
 
             <View>
-                <FlatList data={orders} renderItem={() => (
-                    <OrderListItem />
+                <FlatList data={orders} renderItem={({item}) => (
+                    <OrderListItem order={item} />
                 )} />
             </View>
         </View>
