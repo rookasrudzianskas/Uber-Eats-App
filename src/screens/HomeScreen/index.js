@@ -7,10 +7,10 @@ const HomeScreen = () => {
     return (
         <View className="mx-4">
             <FlatList
+                keyExtractor={(item) => item.id}
                 data={Restaurants}
                 showsVerticalScrollIndicator={false}
                 renderItem={({item}) => <RestaurantItem restaurant={item} />}
-                keyExtractor={(item) => item.id}
             />
         </View>
     );
