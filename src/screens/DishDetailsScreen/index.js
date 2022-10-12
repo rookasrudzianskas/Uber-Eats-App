@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {AntDesign, Feather} from "@expo/vector-icons";
 import Restaurants from '../../assets/data/restaurants.json';
+import {useNavigation} from "@react-navigation/native";
 
 const DishDetailsScreen = () => {
     const dish = Restaurants[0]?.dishes[0];
     const [quantity, setQuantity] = useState(1);
-
+    const navigation = useNavigation();
     const onPlus = () => {
         // make it always positive number
         setQuantity(Math.max(1, quantity + 1));
@@ -44,11 +45,11 @@ const DishDetailsScreen = () => {
                 </TouchableOpacity>
             </View>
 
-            <View className="absolute bottom-28 right-1 left-1 flex-row items-center justify-between mx-4 bg-black py-4 rounded-sm">
+            <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Basket')} className="absolute bottom-28 right-1 left-1 flex-row items-center justify-between mx-4 bg-black py-4 rounded-sm">
                 <View></View>
                 <Text className="text-white text-[15px] font-semibold ml-16">Add {quantity} to basket</Text>
                 <Text className="text-white mr-3">{getTotal()} $</Text>
-            </View>
+            </TouchableOpacity>
         </View>
     );
 };

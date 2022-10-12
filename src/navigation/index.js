@@ -8,6 +8,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import OrdersScreen from "../screens/OrdersScreen";
 import {FontAwesome5, Foundation, MaterialIcons} from "@expo/vector-icons";
 import DishDetailsScreen from "../screens/DishDetailsScreen";
+import Basket from "../screens/Basket";
 
 
 const Stack = createNativeStackNavigator();
@@ -48,6 +49,9 @@ const HomeStackComponent = () => {
             <HomeStack.Screen name="Restaurants" component={HomeScreen} />
             <HomeStack.Screen name="Restaurant" component={RestaurantDetails} />
             <HomeStack.Screen name="Dish" component={DishDetailsScreen} options={{
+                headerShown: false
+            }} />
+            <HomeStack.Screen name="Basket" component={Basket} options={{
                 headerShown: false
             }} />
         </HomeStack.Navigator>
