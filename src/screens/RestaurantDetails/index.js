@@ -21,6 +21,7 @@ const RestaurantDetails = () => {
                 </View>
             </View>
             <View className="border-b border-gray-300 border mt-5"/>
+
         </View>
     );
 };
