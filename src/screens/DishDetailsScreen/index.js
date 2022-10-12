@@ -31,7 +31,7 @@ const DishDetailsScreen = () => {
 
             <View className="absolute bottom-10 right-1 left-1 flex-row items-center justify-between mx-4 bg-black py-4 rounded-sm">
                 <View></View>
-                <Text className="text-white text-[15px] font-semibold ml-16">Add 2 to basket</Text>
+                <Text className="text-white text-[15px] font-semibold ml-16">Add {quantity} to basket</Text>
                 <Text className="text-white mr-3">23.90 $</Text>
             </View>
         </View>
