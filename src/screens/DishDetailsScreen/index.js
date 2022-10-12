@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {AntDesign, Feather} from "@expo/vector-icons";
 import Restaurants from '../../assets/data/restaurants.json';
 
 const DishDetailsScreen = () => {
     const dish = Restaurants[0]?.dishes[0];
+    const [quantity, setQuantity] = useState(1);
     return (
         <View className="relative h-screen bg-gray-100">
             <View className="px-4">
@@ -22,7 +23,7 @@ const DishDetailsScreen = () => {
                 <TouchableOpacity activeOpacity={0.7}>
                     <AntDesign name="pluscircleo" size={35} color="black" />
                 </TouchableOpacity>
-                <Text className="text-gray-900 text-[17px]">2</Text>
+                <Text className="text-gray-900 text-[17px]">{quantity}</Text>
                 <TouchableOpacity activeOpacity={0.7}>
                     <AntDesign name="minuscircleo" size={35} color="black" />
                 </TouchableOpacity>
