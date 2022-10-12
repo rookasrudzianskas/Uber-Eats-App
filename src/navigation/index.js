@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "../screens/HomeScreen";
 import RestaurantDetails from "../screens/RestaurantDetails";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import OrdersScreen from "../screens/OrdersScreen";
 import {FontAwesome5, Foundation, Ionicons, MaterialIcons} from "@expo/vector-icons";
 import DishDetailsScreen from "../screens/DishDetailsScreen";
@@ -26,7 +26,7 @@ const RootNavigator = () => {
     );
 }
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const HomeTabs = () => {
     return (
