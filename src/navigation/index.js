@@ -11,6 +11,7 @@ import DishDetailsScreen from "../screens/DishDetailsScreen";
 import Basket from "../screens/Basket";
 import OrderDetails from "../screens/OrderDetails/OrderDetails";
 import {Auth} from "aws-amplify";
+import ProfileScreen from "../screens/ProfileScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -36,7 +37,7 @@ const HomeTabs = () => {
             <Tab.Screen name="Orders" component={OrderStackNavigator} options={{
                 tabBarIcon: ({color}) => <MaterialIcons name="list-alt" size={24} color={color} />
             }} />
-            <Tab.Screen name="Profile" component={HomeScreen} options={{
+            <Tab.Screen name="Profile" component={ProfileScreen} options={{
                 tabBarIcon: ({color}) => <FontAwesome5 name="user-alt" size={20} color={color} />
             }} />
         </Tab.Navigator>
