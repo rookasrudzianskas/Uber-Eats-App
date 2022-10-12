@@ -30,7 +30,7 @@ const Tab = createBottomTabNavigator();
 
 const HomeTabs = () => {
     return (
-        <Tab.Navigator initialRouteName="Home" barStyle={{ backgroundColor: 'white'}}>
+        <Tab.Navigator screenOptions={{headerShown: false}} initialRouteName="Home" barStyle={{ backgroundColor: 'white'}}>
             <Tab.Screen name="Home" component={HomeStackComponent} options={{
                 tabBarIcon: ({color}) => <Foundation name="home" size={24} color={color} />
             }} />
