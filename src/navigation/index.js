@@ -1,15 +1,16 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "../screens/HomeScreen";
 import RestaurantDetails from "../screens/RestaurantDetails";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import OrdersScreen from "../screens/OrdersScreen";
-import {FontAwesome5, Foundation, MaterialIcons} from "@expo/vector-icons";
+import {FontAwesome5, Foundation, Ionicons, MaterialIcons} from "@expo/vector-icons";
 import DishDetailsScreen from "../screens/DishDetailsScreen";
 import Basket from "../screens/Basket";
 import OrderDetails from "../screens/OrderDetails/OrderDetails";
+import {Auth} from "aws-amplify";
 
 
 const Stack = createNativeStackNavigator();
@@ -47,7 +48,13 @@ const HomeStack = createNativeStackNavigator();
 const HomeStackComponent = () => {
     return (
         <HomeStack.Navigator>
-            <HomeStack.Screen name="Restaurants" component={HomeScreen} />
+            <HomeStack.Screen name="Restaurants" component={HomeScreen} options={{
+                headerRight: () => (
+                    <TouchableOpacity onPress={() => Auth.signOut()} activeOpacity={0.7} style={{marginRight: 10}}>
+                        <Ionicons name="log-in" size={24} color="black" />
+                    </TouchableOpacity>
+                )
+            }} />
             <HomeStack.Screen name="Restaurant" component={RestaurantDetails} />
             <HomeStack.Screen name="Dish" component={DishDetailsScreen} options={{
                 headerShown: false
