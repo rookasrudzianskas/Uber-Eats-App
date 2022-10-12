@@ -25,7 +25,7 @@ const DishDetailsScreen = () => {
     return (
         <View className="relative h-screen bg-gray-100">
             <View className="px-4">
-                <TouchableOpacity activeOpacity={0.7} className="mt-16">
+                <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.7} className="mt-16">
                     <Feather name="arrow-left" size={28} color="black" />
                 </TouchableOpacity>
                 <View className="mt-7">
