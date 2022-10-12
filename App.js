@@ -5,6 +5,7 @@ import { LogBox } from 'react-native';
 import HomeScreen from "./src/screens/HomeScreen";
 import RestaurantDetails from "./src/screens/RestaurantDetails";
 import DishDetailsScreen from "./src/screens/DishDetailsScreen";
+import Basket from "./src/screens/Basket";
 
 LogBox.ignoreLogs(['SplashScreen.show']);
 
@@ -13,7 +14,8 @@ export default function App() {
         <View className="h-screen">
             {/*<HomeScreen />*/}
             {/*<RestaurantDetails />*/}
-            <DishDetailsScreen />
+            {/*<DishDetailsScreen />*/}
+            <Basket />
             <StatusBar style="auto" />
         </View>
     );
