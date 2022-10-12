@@ -9,6 +9,7 @@ import OrdersScreen from "../screens/OrdersScreen";
 import {FontAwesome5, Foundation, MaterialIcons} from "@expo/vector-icons";
 import DishDetailsScreen from "../screens/DishDetailsScreen";
 import Basket from "../screens/Basket";
+import OrderDetails from "../screens/OrderDetails/OrderDetails";
 
 
 const Stack = createNativeStackNavigator();
@@ -31,7 +32,7 @@ const HomeTabs = () => {
             <Tab.Screen name="Home" component={HomeStackComponent} options={{
                 tabBarIcon: ({color}) => <Foundation name="home" size={24} color={color} />
             }} />
-            <Tab.Screen name="Orders" component={OrdersScreen} options={{
+            <Tab.Screen name="Orders" component={OrderStackNavigator} options={{
                 tabBarIcon: ({color}) => <MaterialIcons name="list-alt" size={24} color={color} />
             }} />
             <Tab.Screen name="Profile" component={HomeScreen} options={{
@@ -57,5 +58,18 @@ const HomeStackComponent = () => {
         </HomeStack.Navigator>
     );
 }
+
+const OrdersStack = createNativeStackNavigator();
+
+const OrderStackNavigator = () => {
+    return (
+        <OrdersStack.Navigator>
+            <OrdersStack.Screen name="Orders" component={OrdersScreen} />
+            <OrdersStack.Screen name="Order" component={OrderDetails} />
+        </OrdersStack.Navigator>
+    );
+}
+
+
 
 export default RootNavigator;

@@ -1,9 +1,12 @@
 import React from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from "@react-navigation/native";
 
 const OrderListItem = ({order}) => {
+    const navigation = useNavigation();
+
     return (
-        <TouchableOpacity activeOpacity={0.7} className="mx-4 my-2 border-b border-gray-300 pb-3">
+        <TouchableOpacity onPress={() => navigation.navigate('Order', {id: order.id})} activeOpacity={0.7} className="mx-4 my-2 border-b border-gray-300 pb-3">
             <View className="flex-row items-center">
                 <View>
                     <Image className="w-16 h-16 rounded-md" source={{uri: order?.Restaurant?.image }} />

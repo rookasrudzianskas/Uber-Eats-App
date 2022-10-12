@@ -13,13 +13,8 @@ const OrdersScreen = () => {
     return (
         <View>
             <FlatList
-                ListHeaderComponent={() => (
-                    <OrderDetailsHeader />
-                )}
-                data={restaurant} renderItem={({item}) => (
-                    <View className="mx-4 border-b border-gray-300 py-2">
-                        <BasketDishItem basketDish={item}/>
-                    </View>
+                data={orders} renderItem={({item}) => (
+                <OrderListItem order={item}/>
             )}/>
         </View>
     );
