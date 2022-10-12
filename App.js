@@ -4,6 +4,7 @@ import Restaurants from './src/assets/data/restaurants.json'
 import { LogBox } from 'react-native';
 import HomeScreen from "./src/screens/HomeScreen";
 import RestaurantDetails from "./src/screens/RestaurantDetails";
+import DishDetailsScreen from "./src/screens/DishDetailsScreen";
 
 LogBox.ignoreLogs(['SplashScreen.show']);
 
@@ -11,7 +12,8 @@ export default function App() {
     return (
         <View className="h-screen">
             {/*<HomeScreen />*/}
-            <RestaurantDetails />
+            {/*<RestaurantDetails />*/}
+            <DishDetailsScreen />
             <StatusBar style="auto" />
         </View>
     );
