@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import RootNavigator from "./src/navigation";
 
 LogBox.ignoreLogs(['SplashScreen.show']);
-LogBox.ignoreLogs(['SplashScreen.show']);
+LogBox.ignoreLogs(['Each child in a list should have a unique "key" prop.']);
 
 export default function App() {
     return (
