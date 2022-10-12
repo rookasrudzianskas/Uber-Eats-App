@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, FlatList} from 'react-native';
 import OrderListItem from "../../components/OrderListItem";
 import orders from '../../assets/data/orders.json';
 const OrdersScreen = () => {
@@ -10,7 +10,9 @@ const OrdersScreen = () => {
             </View>
 
             <View>
-                <OrderListItem />
+                <FlatList data={orders} renderItem={() => (
+                    <OrderListItem />
+                )} />
             </View>
         </View>
     );
