@@ -7,20 +7,23 @@ import RestaurantDetails from "./src/screens/RestaurantDetails";
 import DishDetailsScreen from "./src/screens/DishDetailsScreen";
 import Basket from "./src/screens/Basket";
 import OrdersScreen from "./src/screens/OrdersScreen";
+import { NavigationContainer } from '@react-navigation/native';
 
 LogBox.ignoreLogs(['SplashScreen.show']);
 
 export default function App() {
     return (
-        <View className="h-screen">
-            {/*<HomeScreen />*/}
-            {/*<RestaurantDetails />*/}
-            {/*<DishDetailsScreen />*/}
-            {/*<Basket />*/}
-            {/*<OrdersScreen />*/}
-            <OrdersScreen />
-            <StatusBar style="auto" />
-        </View>
+        <NavigationContainer>
+            <View className="h-screen">
+                {/*<HomeScreen />*/}
+                {/*<RestaurantDetails />*/}
+                {/*<DishDetailsScreen />*/}
+                {/*<Basket />*/}
+                {/*<OrdersScreen />*/}
+                <StatusBar style="auto" />
+            </View>
+        </NavigationContainer>
+
     );
 }
 
