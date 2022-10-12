@@ -10,7 +10,9 @@ import {useNavigation, useRoute} from "@react-navigation/native";
 const RestaurantDetails = () => {
     const restaurant = Restaurants[0];
     const navigation = useNavigation();
-    const router = useRoute();
+    const route = useRoute();
+    const id = route.params?.id;
+    console.warn(id)
     return (
         <View className="relative bg-gray-100 h-screen">
             <StatusBar style="light" />
@@ -19,6 +21,7 @@ const RestaurantDetails = () => {
             </TouchableOpacity>
             <View>
                 <FlatList
+                    keyExtractor={(item) => item.id}
                     showsVerticalScrollIndicator={false}
                     ListHeaderComponent={() => (
                     <RestaurantHeader restaurant={restaurant} />
