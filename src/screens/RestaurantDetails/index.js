@@ -3,6 +3,7 @@ import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {AntDesign, FontAwesome} from "@expo/vector-icons";
 import Restaurants from '../../assets/data/restaurants.json';
 import {StatusBar} from "expo-status-bar";
+import DishListItem from "../../components/DishListItem";
 
 const RestaurantDetails = () => {
     const restaurant = Restaurants[0];
@@ -25,6 +26,10 @@ const RestaurantDetails = () => {
             <View className="border-b border-gray-300 border mt-5"/>
             <View>
                 <Text className="text-lg font-[600] text-gray-600 mx-4 mt-2">Menu</Text>
+            </View>
+            <View>
+                <DishListItem dish={restaurant.dishes[0]} />
+                <DishListItem dish={restaurant.dishes[0]} />
             </View>
         </View>
     );
