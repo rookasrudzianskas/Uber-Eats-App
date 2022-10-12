@@ -9,7 +9,7 @@ const RestaurantDetails = () => {
         <View className="bg-gray-100 h-screen">
             <Image className="relative w-[100%]" style={{aspectRatio: 9 / 5}} source={{uri: restaurant?.image}} />
             <TouchableOpacity className="absolute items-center justify-center top-10 left-4 bg-white w-10 h-10 rounded-full" activeOpacity={0.7}>
-                <AntDesign name="arrowleft" size={24} color="black" />
+                <AntDesign name="arrowleft" size={24} color="black" style={{backgroundColor: 'transparent'}} />
             </TouchableOpacity>
             <View className="mx-4 mt-5">
                 <Text className="text-3xl font-[600] text-gray-900">{restaurant?.name}</Text>
