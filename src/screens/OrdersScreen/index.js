@@ -2,18 +2,25 @@ import React from 'react';
 import {Text, View, StyleSheet, FlatList} from 'react-native';
 import OrderListItem from "../../components/OrderListItem";
 import orders from '../../assets/data/orders.json';
+import BasketDishItem from "../../components/BasketDishItem";
+import OrderDetailsHeader from "../OrderDetails";
+import restaurants from "../../assets/data/restaurants.json";
+
+
 const OrdersScreen = () => {
+    const restaurant = restaurants[0].dishes;
+
     return (
         <View>
-            <View className="flex-row justify-center mt-[50px]">
-                <Text className="text-gray-900 font-bold text-2xl">Your orders</Text>
-            </View>
-
-            <View>
-                <FlatList data={orders} renderItem={({item}) => (
-                    <OrderListItem order={item} />
-                )} />
-            </View>
+            <FlatList
+                ListHeaderComponent={() => (
+                    <OrderDetailsHeader />
+                )}
+                data={restaurant} renderItem={({item}) => (
+                    <View className="mx-4 border-b border-gray-300 py-2">
+                        <BasketDishItem basketDish={item}/>
+                    </View>
+            )}/>
         </View>
     );
 };

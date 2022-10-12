@@ -3,7 +3,7 @@ import {Text, View, StyleSheet, Image} from 'react-native';
 import orders from '../../assets/data/orders.json';
 import {FontAwesome} from "@expo/vector-icons";
 
-const OrderDetails = () => {
+const OrderDetailsHeader = () => {
     const order = orders[0];
     return (
         <View>
@@ -26,4 +26,4 @@ const OrderDetails = () => {
     );
 };
 
-export default OrderDetails;
+export default OrderDetailsHeader;

@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
 import {AntDesign, Feather} from "@expo/vector-icons";
 import Restaurants from '../../assets/data/restaurants.json';
+import BasketDishItem from "../../components/BasketDishItem";
 
 const Basket = () => {
     const restaurant = Restaurants[0];
@@ -22,15 +23,7 @@ const Basket = () => {
 
                 <View className="mt-6">
                     <FlatList data={restaurant?.dishes} renderItem={({item}) => (
-                        <TouchableOpacity className="flex-row items-center my-[4px]" activeOpacity={0.7}>
-                            <View className="flex-1 flex-row space-x-2 items-center">
-                                <View className="bg-gray-200 w-6 h-6 rounded-sm flex items-center justify-center">
-                                    <Text className="font-[500]">1</Text>
-                                </View>
-                                <Text className="text-gray-900 font-[500]">{item?.name}</Text>
-                            </View>
-                            <Text className="text-gray-800 font-[500]">$ {item?.price}</Text>
-                        </TouchableOpacity>
+                        <BasketDishItem basketDish={item} />
                     )} />
                 </View>
             </View>
