@@ -79,6 +79,4 @@ const OrderStackNavigator = () => {
     );
 }
 
-
-
 export default RootNavigator;
