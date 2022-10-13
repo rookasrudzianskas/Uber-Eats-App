@@ -20,13 +20,13 @@ const RestaurantCard = ({restaurant}) => {
                 <View className="space-y-1">
                     <Text className="text-gray-900 font-[600] text-[18px]">{restaurant?.name}</Text>
                     <View className="flex-row items-center">
-                        <Text className="text-gray-400 text-[15px]">{restaurant?.deliveryFee}</Text>
+                        <Text className="text-gray-400 text-[15px]">{(restaurant?.deliveryFee).toFixed(1)}</Text>
                         <Text className="text-gray-400 text-[15px]"> • </Text>
                         <Text className="text-gray-400 text-[15px]">{restaurant?.minDeliveryTime} - {restaurant?.maxDeliveryTime} min</Text>
                     </View>
                 </View>
                 <View className="bg-gray-200 rounded-full items-center justify-center h-8 w-8 m-2">
-                    <Text className="font-[600] text-gray-700">{restaurant?.rating}</Text>
+                    <Text className="font-[600] text-gray-700">{(restaurant?.rating).toFixed(1)}</Text>
                 </View>
             </View>
         </TouchableOpacity>
