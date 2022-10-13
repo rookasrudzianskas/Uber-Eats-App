@@ -11,7 +11,7 @@
       "name": "Cheese Tequeños",
       "description": "6 pieces of chese with sauce.",
       "price": 6.90,
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg"
     },
     {
       "name": "Hamburger La Super Cabo Burger",
@@ -83,27 +83,27 @@
     {
       "name": "Burger Mustang",
       "description": "Homemade bread, burger sauce, lettuce, sweet and sour pickle, bacon, cheddar and BBQ sauce. Beef 180 grams.",
-      "price": 5.90     
+      "price": 5.90
     },
     {
       "name": "Alabama bread",
       "description": "Artisan bread, butter sauce, garlic, BBQ chicken and cheddar.",
-      "price": 3.00   
+      "price": 3.00
     },
     {
       "name": "New York Burger",
       "description": "Homemade bread, lettuce, burger sauce, 180 grams of beef, goat cheese and roasted apple.",
-      "price": 5.90     
+      "price": 5.90
     },
     {
       "name": "Mac & Cheese Burger",
       "description": "Homemade bread, lettuce, burger sauce, 180 grams of beef, mac and cheese, and American-style bacon.",
-      "price": 5.90     
+      "price": 5.90
     },
     {
       "name": "Nachos Brothers",
       "description": "Nachos, guacamole, cheddar sauce, beans, bacon, and cream cheese.",
-      "price": 5.20     
+      "price": 5.20
     }
   ]
 }, {
@@ -118,27 +118,27 @@
     {
       "name": "English burger",
       "description": "Beef with bacon, portobello mushrooms, tomato, cheddar cheese, grilled egg and our smoked sauce.",
-      "price": 14.90     
+      "price": 14.90
     },
     {
       "name": "Mexican Burger",
       "description": "Beef, with pico de gallo, veggie chili, cheddar cheese, guacamole and smoked sauce.",
-      "price": 14.90     
+      "price": 14.90
     },
     {
       "name": "Tequeños",
       "description": "Crispy sticks filled with melted cheese accompanied by tomato chutney.",
-      "price": 9.90    
+      "price": 9.90
     },
     {
       "name": "Starters Combo",
       "description": "Tequeños, crispy onion and chicken delicacies.",
-      "price": 13.90    
+      "price": 13.90
     },
     {
       "name": "Cesar Salad",
       "description": "Green sprouts, pieces of grilled bacon, chicken delicacies, grated Parmesan, muffin croutons and fried onion confetti dressed with Caesar sauce.",
-      "price": 10.50     
+      "price": 10.50
     }
   ]
 }]
