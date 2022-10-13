@@ -4,9 +4,12 @@ import {AntDesign, Feather} from "@expo/vector-icons";
 import BasketDishItem from "../../components/BasketDishItem";
 import {useNavigation} from "@react-navigation/native";
 import {useBasketContext} from "../../contexts/BasketContext";
+import {useOrderContext} from "../../contexts/OrderContext";
 
 const Basket = () => {
     const {restaurant, basketDishes, totalPrice} = useBasketContext();
+    const {} = useOrderContext();
+
     const navigation = useNavigation();
     if(!restaurant) {
         return (
