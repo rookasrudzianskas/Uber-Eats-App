@@ -12,16 +12,26 @@ import Basket from "../screens/Basket";
 import OrderDetails from "../screens/OrderDetails/OrderDetails";
 import {Auth} from "aws-amplify";
 import ProfileScreen from "../screens/ProfileScreen";
+import {useAuthContext} from "../contexts/AuthContext";
 
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
+
+    const {dbUser} = useAuthContext();
+
     return (
         <Stack.Navigator initialRouteName="HomeTabs">
-            <Stack.Screen name="HomeTabs" component={HomeTabs} options={{
-                headerShown: false
-            }} />
+            {dbUser ? (
+                <Stack.Screen name="HomeTabs" component={HomeTabs} options={{
+                    headerShown: false
+                }} />
+            ) : (
+                <Stack.Screen name={'Profile'} component={ProfileScreen} options={{
+                    headerShown: false
+                }} />
+            )}
         </Stack.Navigator>
     );
 }
