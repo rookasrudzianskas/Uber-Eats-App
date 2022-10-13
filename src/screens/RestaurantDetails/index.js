@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity, FlatList, ScrollView, ActivityIndicator} from 'react-native';
 import {AntDesign, FontAwesome} from "@expo/vector-icons";
 import Restaurants from '../../assets/data/restaurants.json';
@@ -6,6 +6,8 @@ import {StatusBar} from "expo-status-bar";
 import DishListItem from "../../components/DishListItem";
 import RestaurantHeader from "./Header";
 import {useNavigation, useRoute} from "@react-navigation/native";
+import {DataStore} from "aws-amplify";
+import {Restaurant} from "../../models";
 
 const RestaurantDetails = () => {
     const navigation = useNavigation();
@@ -13,7 +15,12 @@ const RestaurantDetails = () => {
     const id = route.params?.id;
     const [restaurant, setRestaurant] = useState([]);
 
-    if(!restaurant.length) {
+    useEffect(() => {
+        // TODO: Fetch restaurant from API
+        DataStore.query(Restaurant, id).then(setRestaurant);
+    }, []);
+
+    if(!restaurant) {
         return (
             <View className="items-center justify-center h-screen -mt-7">
                 <Text className="text-xl mb-4 font-bold text-gray-900">Restaurant is loading...</Text>
