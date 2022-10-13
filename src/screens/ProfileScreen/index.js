@@ -21,7 +21,16 @@ const Profile = () => {
   };
 
   const updateUser = async () => {
-
+      // update user
+      const user = await DataStore.save(
+          User.copyOf(dbUser, updated => {
+              updated.name = name,
+              updated.address = address,
+              updated.lat = parseFloat(lat),
+              updated.lng = parseFloat(lng)
+          }));
+      setDbUser(user);
+      // console.warn('user updated', user);
   }
 
   const createUser = async () => {
