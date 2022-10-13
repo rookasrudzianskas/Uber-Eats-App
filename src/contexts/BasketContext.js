@@ -1,5 +1,5 @@
 // create Basket context
-import { createContext } from 'react';
+import {createContext, useContext} from 'react';
 
 const BasketContext = createContext();
 
@@ -15,3 +15,7 @@ const BasketContextProvider = ({ children }) => {
 
 
 export default BasketContextProvider;
+
+export const useBasketContext = () => {
+    return useContext(BasketContext);
+}
