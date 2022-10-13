@@ -6,6 +6,7 @@ import RootNavigator from "./src/navigation";
 import { Amplify } from 'aws-amplify'
 import awsconfig from './src/aws-exports'
 import {withAuthenticator} from "aws-amplify-react-native/src/Auth";
+import AuthContextProvider from "./src/contexts/AuthContext";
 
 Amplify.configure({
     ...awsconfig,
@@ -19,13 +20,15 @@ LogBox.ignoreLogs(['Each child in a list should have a unique "key" prop.']);
 
 const App = () => {
     return (
-        <NavigationContainer>
-            <View className="h-screen">
-                {/*<HomeTabs />*/}
-                <RootNavigator />
-                <StatusBar style="auto" />
-            </View>
-        </NavigationContainer>
+            <NavigationContainer>
+                <AuthContextProvider>
+                    <View className="h-screen">
+                        {/*<HomeTabs />*/}
+                        <RootNavigator />
+                        <StatusBar style="auto" />
+                    </View>
+                </AuthContextProvider>
+            </NavigationContainer>
 
     );
 }
