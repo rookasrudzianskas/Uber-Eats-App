@@ -7,7 +7,7 @@ const DEFAULT_IMAGE = 'https://images.squarespace-cdn.com/content/v1/55802029e4b
 const RestaurantHeader = ({restaurant}) => {
     return (
         <>
-            <Image className="w-[100%]" style={{aspectRatio: 9 / 5}} source={{uri: restaurant?.image.startsWith('http') ? restaurant?.image : DEFAULT_IMAGE}}/>
+            <Image className="w-[100%]" style={{aspectRatio: 9 / 5}} source={{uri: Uizard?.image.startsWith('http') ? restaurant?.image : DEFAULT_IMAGE}}/>
 
             <View className="mx-4 mt-5">
                 <Text className="text-3xl font-[600] text-gray-900">{restaurant?.name}</Text>

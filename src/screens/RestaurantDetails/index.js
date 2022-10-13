@@ -7,16 +7,18 @@ import DishListItem from "../../components/DishListItem";
 import RestaurantHeader from "./Header";
 import {useNavigation, useRoute} from "@react-navigation/native";
 import {DataStore} from "aws-amplify";
-import {Restaurant} from "../../models";
+import {Dish, Restaurant} from "../../models";
 
 const RestaurantDetails = () => {
     const navigation = useNavigation();
     const route = useRoute();
     const id = route.params?.id;
     const [restaurant, setRestaurant] = useState([]);
+    const [dishes, setDishes] = useState([]);
 
     useEffect(() => {
         DataStore.query(Restaurant, id).then(setRestaurant);
+        DataStore.query(Dish, (dish) => dish.restaurantID("eq", id)).then(setDishes);
     }, []);
 
     if(!restaurant) {
@@ -42,7 +44,7 @@ const RestaurantDetails = () => {
                     showsVerticalScrollIndicator={false}
                     ListHeaderComponent={() => (
                     <RestaurantHeader restaurant={restaurant} />
-                )} data={restaurant.dishes} renderItem={({item}) => <DishListItem dish={item} />} />
+                )} data={dishes} renderItem={({item}) => <DishListItem dish={item} />} />
             </View>
         </View>
     );
