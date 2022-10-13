@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Text, View, StyleSheet, Image, ActivityIndicator} from 'react-native';
 
 const OrderDetailsHeader = ({order}) => {
+    // console.log(order);
     return (
         <View>
             <>

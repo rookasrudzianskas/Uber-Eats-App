@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 
 const BasketDishItem = ({basketDish}) => {
-    // console.warn(basketDish);
+    // console.log(basketDish);
     return (
         <TouchableOpacity className="flex-row items-center my-[4px]" activeOpacity={0.7}>
             <View className="flex-1 flex-row space-x-2 items-center">

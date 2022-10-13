@@ -12,7 +12,7 @@ const Basket = () => {
     const navigation = useNavigation();
     const onCreateOrder = async () => {
         await createOrder();
-        navigation.navigate('Order')
+        navigation.goBack();
     }
 
     if(!restaurant) {
