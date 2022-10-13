@@ -3,6 +3,8 @@ import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import {useNavigation} from "@react-navigation/native";
 
+const DEFAULT_IMAGE = 'https://images.squarespace-cdn.com/content/v1/55802029e4b08f4843c44d82/1467318800746-ARA77WKJVJZ0JWN26O0V/-%C2%ACShawna_Stanley_2015-110.JPG?format=2500w';
+
 const RestaurantCard = ({restaurant}) => {
     const navigation = useNavigation();
     const [clicked, setClicked] = useState(false);
@@ -10,7 +12,7 @@ const RestaurantCard = ({restaurant}) => {
         <TouchableOpacity onPress={() => navigation.navigate('Restaurant', {
             id: restaurant.id
         })} activeOpacity={0.7} className="my-2 bg-gray-100 p-2 rounded">
-            <Image className="w-full h-56 relative" source={{uri: restaurant?.image}} />
+            <Image className="w-full h-56 relative" source={{uri: restaurant?.image.startsWith('http') ? restaurant?.image : DEFAULT_IMAGE}}/>
             <TouchableOpacity onPress={() => setClicked(!clicked)} activeOpacity={0.7} className="absolute top-5 right-4">
                 {clicked ? <AntDesign name="hearto" size={20} color="white" /> : <AntDesign name="heart" size={20} color="red" />}
             </TouchableOpacity>
