@@ -18,7 +18,6 @@ import {useAuthContext} from "../contexts/AuthContext";
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
-
     const {dbUser} = useAuthContext();
 
     return (
