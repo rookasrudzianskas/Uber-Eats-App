@@ -16,7 +16,6 @@ const RestaurantDetails = () => {
     const [restaurant, setRestaurant] = useState([]);
 
     useEffect(() => {
-        // TODO: Fetch restaurant from API
         DataStore.query(Restaurant, id).then(setRestaurant);
     }, []);
 
