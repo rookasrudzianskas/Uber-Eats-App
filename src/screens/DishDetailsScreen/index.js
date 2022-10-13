@@ -1,13 +1,30 @@
-import React, {useState} from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Text, View, StyleSheet, TouchableOpacity, ActivityIndicator} from 'react-native';
 import {AntDesign, Feather} from "@expo/vector-icons";
-import Restaurants from '../../assets/data/restaurants.json';
-import {useNavigation} from "@react-navigation/native";
+import {useNavigation, useRoute} from "@react-navigation/native";
+import {DataStore} from "aws-amplify";
+import {Dish} from "../../models";
 
 const DishDetailsScreen = () => {
-    const dish = Restaurants[0]?.dishes[0];
     const [quantity, setQuantity] = useState(1);
     const navigation = useNavigation();
+    const [dish, setDish] = useState(null);
+    const route = useRoute();
+    const id = route.params?.id;
+
+    useEffect(() => {
+      DataStore.query(Dish, id).then(setDish);
+    }, []);
+
+    if(!dish) {
+        return (
+            <View className="items-center justify-center h-screen -mt-7">
+                <Text className="text-xl mb-4 font-bold text-gray-900">Dish is loading...</Text>
+                <ActivityIndicator size={'large'} />
+            </View>
+        )
+    }
+
     const onPlus = () => {
         // make it always positive number
         setQuantity(Math.max(1, quantity + 1));
