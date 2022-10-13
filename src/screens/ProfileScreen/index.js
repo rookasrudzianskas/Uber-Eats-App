@@ -1,14 +1,32 @@
-import { View, Text, TextInput, StyleSheet, Button } from "react-native";
+import {View, Text, TextInput, StyleSheet, Button, Alert} from "react-native";
 import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import {DataStore} from "aws-amplify";
+import {useAuthContext} from "../../contexts/AuthContext";
+import {User} from "../../models";
 
 const Profile = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [lat, setLat] = useState("0");
   const [lng, setLng] = useState("0");
+  const {sub} = useAuthContext();
 
-  const onSave = () => {};
+  const onSave = () => {
+      // save in DataStore here
+      try {
+          DataStore.save(new User({
+              name,
+              address,
+              lat: parseFloat(lat),
+              lng: parseFloat(lng),
+              sub: sub,
+          }));
+          // console.warn('Done!')
+      } catch (e) {
+          Alert.alert('Error', 'Whoops! Something went wrong.');
+      }
+  };
 
   return (
     <SafeAreaView>
