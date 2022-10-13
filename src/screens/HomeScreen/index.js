@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Text, View, StyleSheet, FlatList, ActivityIndicator} from 'react-native';
-import Restaurants from "../../assets/data/restaurants.json";
 import RestaurantItem from "../../components/RestaurantItem";
 import {DataStore} from "aws-amplify";
 import {Restaurant} from "../../models";
