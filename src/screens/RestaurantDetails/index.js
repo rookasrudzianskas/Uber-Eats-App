@@ -19,7 +19,7 @@ const RestaurantDetails = () => {
         if(!id) return;
         DataStore.query(Restaurant, id).then(setRestaurant);
         DataStore.query(Dish, (dish) => dish.restaurantID("eq", id)).then(setDishes);
-    }, []);
+    }, [id]);
 
     if(!restaurant) {
         return (
