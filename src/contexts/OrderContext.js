@@ -1,5 +1,5 @@
 // create Order context
-import { createContext } from 'react';
+import {createContext, useContext} from 'react';
 
 const OrderContext = createContext();
 
@@ -12,3 +12,7 @@ const OrderContextProvider = ({ children }) => {
         </OrderContext.Provider>
     );
 }
+
+export default OrderContextProvider;
+
+export const useOrderContext = () => useContext(OrderContext);
