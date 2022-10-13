@@ -15,11 +15,20 @@ const BasketContextProvider = ({ children }) => {
         DataStore.query(Basket, b => b.restaurantID("eq", restaurant.id).userID("eq", dbUser.id)).then(baskets => setBasket(baskets[0]));
     }, [dbUser, restaurant]);
 
-    const addDishToBasket = (dish, quantity) => {
+    const addDishToBasket = async (dish, quantity) => {
         // console.log('addDishToBasket', dish, quantity);
         // get the existing basket from local storage or  create a new one
         // create a BasketDishItem and add to cloud
+        let theBasket = basket || await createNewBasket();
+    }
 
+    const createNewBasket = async () => {
+        const newBasket = await DataStore.save(new Basket({
+            userID: dbUser.id,
+            restaurantID: restaurant.id,
+        }));
+        setBasket(newBasket);
+        return newBasket;
     }
 
     return (
