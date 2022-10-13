@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import {DataStore} from "aws-amplify";
 import {useAuthContext} from "../../contexts/AuthContext";
 import {User} from "../../models";
+import {useNavigation} from "@react-navigation/native";
 
 const Profile = () => {
   const {sub, setDbUser, dbUser } = useAuthContext();
@@ -11,6 +12,7 @@ const Profile = () => {
   const [address, setAddress] = useState(dbUser?.address || '');
   const [lat, setLat] = useState(dbUser?.lat + "" || '0');
   const [lng, setLng] = useState(dbUser?.lng + "" || '0');
+  const navigation = useNavigation();
 
   const onSave = async () => {
       if(dbUser) {
@@ -30,6 +32,7 @@ const Profile = () => {
               updated.lng = parseFloat(lng)
           }));
       setDbUser(user);
+      navigation.goBack();
       // console.warn('user updated', user);
   }
 
