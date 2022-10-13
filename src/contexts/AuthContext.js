@@ -11,12 +11,14 @@ const AuthContextProvider = ({children}) => {
     useEffect(() => {
         Auth.currentAuthenticatedUser({bypassCache: true}).then(setAuthUser);
     }, []);
-        console.log('authUser', authUser);
+        // console.log('authUser', authUser);
+    const sub = authUser?.attributes?.sub;
 
     return (
         <AuthContext.Provider value={{
             authUser,
             dbUser,
+            sub,
         }}>
             {children}
         </AuthContext.Provider>
