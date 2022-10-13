@@ -4,6 +4,7 @@ import {AntDesign, Feather} from "@expo/vector-icons";
 import {useNavigation, useRoute} from "@react-navigation/native";
 import {DataStore} from "aws-amplify";
 import {Dish} from "../../models";
+import {useBasketContext} from "../../contexts/BasketContext";
 
 const DishDetailsScreen = () => {
     const [quantity, setQuantity] = useState(1);
@@ -11,11 +12,17 @@ const DishDetailsScreen = () => {
     const [dish, setDish] = useState(null);
     const route = useRoute();
     const id = route.params?.id;
+    const {addDishToBasket} = useBasketContext();
 
     useEffect(() => {
       if(!id) return;
       DataStore.query(Dish, id).then(setDish);
     }, [id]);
+
+    const onAddToBasket = () => {
+        // () => navigation.navigate('Basket')
+        addDishToBasket(dish, quantity);
+    }
 
     if(!dish) {
         return (
@@ -63,7 +70,7 @@ const DishDetailsScreen = () => {
                 </TouchableOpacity>
             </View>
 
-            <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Basket')} className="absolute bottom-28 right-1 left-1 flex-row items-center justify-between mx-4 bg-black py-4 rounded-sm">
+            <TouchableOpacity onPress={onAddToBasket} activeOpacity={0.7} className="absolute bottom-28 right-1 left-1 flex-row items-center justify-between mx-4 bg-black py-4 rounded-sm">
                 <View></View>
                 <Text className="text-white text-[15px] font-semibold ml-16">Add {quantity} to basket</Text>
                 <Text className="text-white mr-3">{getTotal()} $</Text>
