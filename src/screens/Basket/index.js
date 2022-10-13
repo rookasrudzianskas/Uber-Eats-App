@@ -1,13 +1,11 @@
 import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, FlatList, ActivityIndicator} from 'react-native';
 import {AntDesign, Feather} from "@expo/vector-icons";
-import Restaurants from '../../assets/data/restaurants.json';
 import BasketDishItem from "../../components/BasketDishItem";
 import {useNavigation} from "@react-navigation/native";
 import {useBasketContext} from "../../contexts/BasketContext";
 
 const Basket = () => {
-    // const restaurant = Restaurants[0];
     const {restaurant, basketDishes, totalPrice} = useBasketContext();
     const navigation = useNavigation();
     if(!restaurant) {
