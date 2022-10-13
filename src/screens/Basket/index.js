@@ -8,7 +8,7 @@ import {useBasketContext} from "../../contexts/BasketContext";
 
 const Basket = () => {
     // const restaurant = Restaurants[0];
-    const {restaurant, basketDishes} = useBasketContext();
+    const {restaurant, basketDishes, totalPrice} = useBasketContext();
     const navigation = useNavigation();
     if(!restaurant) {
         return (
@@ -54,7 +54,7 @@ const Basket = () => {
 
 
             <TouchableOpacity activeOpacity={0.7} className="absolute bottom-28 right-1 left-1 flex-row items-center justify-center mx-4 bg-black py-4 rounded-sm">
-                <Text className="text-white text-[15px] font-semibold">Create Order</Text>
+                <Text className="text-white text-[15px] font-semibold">Create Order ~ ${(totalPrice).toFixed(2)}</Text>
             </TouchableOpacity>
         </View>
     );
