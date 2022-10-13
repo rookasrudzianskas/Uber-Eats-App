@@ -27,6 +27,8 @@ const RestaurantDetails = () => {
             </View>
         )
     }
+
+    console.log(restaurant);
     // console.warn(id)
     return (
         <View className="relative bg-gray-100 h-screen">
