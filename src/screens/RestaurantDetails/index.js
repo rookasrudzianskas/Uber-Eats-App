@@ -1,5 +1,5 @@
-import React from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity, FlatList, ScrollView} from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, StyleSheet, Image, TouchableOpacity, FlatList, ScrollView, ActivityIndicator} from 'react-native';
 import {AntDesign, FontAwesome} from "@expo/vector-icons";
 import Restaurants from '../../assets/data/restaurants.json';
 import {StatusBar} from "expo-status-bar";
@@ -8,10 +8,19 @@ import RestaurantHeader from "./Header";
 import {useNavigation, useRoute} from "@react-navigation/native";
 
 const RestaurantDetails = () => {
-    const restaurant = Restaurants[0];
     const navigation = useNavigation();
     const route = useRoute();
     const id = route.params?.id;
+    const [restaurant, setRestaurant] = useState([]);
+
+    if(!restaurant.length) {
+        return (
+            <View className="items-center justify-center h-screen -mt-7">
+                <Text className="text-xl mb-4 font-bold text-gray-900">Restaurant is loading...</Text>
+                <ActivityIndicator size={'large'} />
+            </View>
+        )
+    }
     // console.warn(id)
     return (
         <View className="relative bg-gray-100 h-screen">
