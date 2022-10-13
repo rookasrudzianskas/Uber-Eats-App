@@ -5,6 +5,8 @@ const BasketContext = createContext();
 
 const BasketContextProvider = ({ children }) => {
     const addDishToBasket = (dish, quantity) => {
+        // console.log('addDishToBasket', dish, quantity);
+        // create a BasketDishItem and add to cloud
 
     }
 

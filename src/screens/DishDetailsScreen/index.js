@@ -19,9 +19,10 @@ const DishDetailsScreen = () => {
       DataStore.query(Dish, id).then(setDish);
     }, [id]);
 
-    const onAddToBasket = () => {
+    const onAddToBasket = async () => {
         // () => navigation.navigate('Basket')
-        addDishToBasket(dish, quantity);
+        await addDishToBasket(dish, quantity);
+        navigation.goBack();
     }
 
     if(!dish) {
