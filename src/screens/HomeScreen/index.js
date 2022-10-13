@@ -4,7 +4,8 @@ import Restaurants from "../../assets/data/restaurants.json";
 import RestaurantItem from "../../components/RestaurantItem";
 
 const HomeScreen = () => {
-    const [restaurants, setRestaurants] = useState(Restaurants);
+    const [restaurants, setRestaurants] = useState([]);
+
     return (
         <View className="mx-4">
             <FlatList
