@@ -41,16 +41,16 @@ const Basket = () => {
             </View>
             <View className="border-b border-gray-300 my-6"/>
 
-            {/*<View className="mx-4 space-y-3">*/}
-            {/*    <View className="flex-row items-center justify-between">*/}
-            {/*        <Text className="text-[14px]">Subtotal</Text>*/}
-            {/*        <Text className="text-gray-800 font-[500]">${restaurant?.dishes[0]?.price}</Text>*/}
-            {/*    </View>*/}
-            {/*    <View className="flex-row items-center justify-between">*/}
-            {/*        <Text className="text-[14px]">Total</Text>*/}
-            {/*        <Text className="text-gray-800 font-[500]">${restaurant?.dishes[0]?.price}</Text>*/}
-            {/*    </View>*/}
-            {/*</View>*/}
+            <View className="mx-4 space-y-3">
+                <View className="flex-row items-center justify-between">
+                    <Text className="text-[14px]">Subtotal</Text>
+                    <Text className="text-gray-800 font-[500]">${(totalPrice).toFixed(1)}</Text>
+                </View>
+                <View className="flex-row items-center justify-between">
+                    <Text className="text-[14px]">Total</Text>
+                    <Text className="text-gray-800 font-[500]">${(totalPrice).toFixed(1)}</Text>
+                </View>
+            </View>
 
 
             <TouchableOpacity activeOpacity={0.7} className="absolute bottom-28 right-1 left-1 flex-row items-center justify-center mx-4 bg-black py-4 rounded-sm">
