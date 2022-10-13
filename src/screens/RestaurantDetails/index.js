@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity, FlatList, ScrollView, ActivityIndicator} from 'react-native';
 import {AntDesign, FontAwesome} from "@expo/vector-icons";
-import Restaurants from '../../assets/data/restaurants.json';
 import {StatusBar} from "expo-status-bar";
 import DishListItem from "../../components/DishListItem";
 import RestaurantHeader from "./Header";
@@ -18,7 +17,7 @@ const RestaurantDetails = () => {
 
     useEffect(() => {
         DataStore.query(Restaurant, id).then(setRestaurant);
-        DataStore.query(Dish, (dish) => dish.restaurantID("eq", id)).then(setDishes);
+        // DataStore.query(Dish, (dish) => dish.restaurantID("eq", id)).then(setDishes);
     }, []);
 
     if(!restaurant) {
@@ -30,7 +29,7 @@ const RestaurantDetails = () => {
         )
     }
 
-    console.log(restaurant);
+    // console.log(restaurant);
     // console.warn(id)
     return (
         <View className="relative bg-gray-100 h-screen">
