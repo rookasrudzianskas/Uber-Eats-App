@@ -15,7 +15,7 @@ const RestaurantDetails = () => {
     const id = route.params?.id;
     const [restaurant, setRestaurant] = useState(null);
     const [dishes, setDishes] = useState([]);
-    const {setRestaurant: setBasketRestaurant} = useBasketContext();
+    const {setRestaurant: setBasketRestaurant, basket, basketDishes} = useBasketContext();
 
     useEffect(() => {
         if(!id) return;
@@ -51,6 +51,12 @@ const RestaurantDetails = () => {
                     <RestaurantHeader restaurant={restaurant} />
                 )} data={dishes} renderItem={({item}) => <DishListItem dish={item} />} />
             </View>
+
+            {basket && (
+                <TouchableOpacity onPress={() => navigation.navigate('Basket')} activeOpacity={0.7} className="absolute bottom-24 right-1 left-1 flex-row items-center justify-center mx-4 bg-black py-4 rounded-sm">
+                    <Text className="text-white text-[15px] font-semibold">Open Basket ({basketDishes.length})</Text>
+                </TouchableOpacity>
+            )}
         </View>
     );
 };
