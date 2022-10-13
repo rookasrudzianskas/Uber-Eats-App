@@ -8,17 +8,11 @@ import {Restaurant} from "../../models";
 const HomeScreen = () => {
     const [restaurants, setRestaurants] = useState([]);
 
-    const fetchRestaurants = async () => {
-        const response = await DataStore.query (Restaurant);
-        setRestaurants(response) ;
-    };
-
-
     useEffect(() => {
-        fetchRestaurants();
+        DataStore.query(Restaurant).then(setRestaurants);
     }, []);
 
-    if(!restaurants) {
+    if(!restaurants.length) {
         return (
             <View className="items-center justify-center h-screen -mt-16">
                 <Text className="text-xl mb-4 font-bold text-gray-900">Restaurants loading 😅</Text>
