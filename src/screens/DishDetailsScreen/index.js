@@ -13,8 +13,9 @@ const DishDetailsScreen = () => {
     const id = route.params?.id;
 
     useEffect(() => {
+      if(!id) return;
       DataStore.query(Dish, id).then(setDish);
-    }, []);
+    }, [id]);
 
     if(!dish) {
         return (
