@@ -12,12 +12,13 @@ const RestaurantDetails = () => {
     const navigation = useNavigation();
     const route = useRoute();
     const id = route.params?.id;
-    const [restaurant, setRestaurant] = useState([]);
+    const [restaurant, setRestaurant] = useState(null);
     const [dishes, setDishes] = useState([]);
 
     useEffect(() => {
+        if(!id) return;
         DataStore.query(Restaurant, id).then(setRestaurant);
-        // DataStore.query(Dish, (dish) => dish.restaurantID("eq", id)).then(setDishes);
+        DataStore.query(Dish, (dish) => dish.restaurantID("eq", id)).then(setDishes);
     }, []);
 
     if(!restaurant) {
@@ -29,8 +30,6 @@ const RestaurantDetails = () => {
         )
     }
 
-    // console.log(restaurant);
-    // console.warn(id)
     return (
         <View className="relative bg-gray-100 h-screen">
             <StatusBar style="light" />
