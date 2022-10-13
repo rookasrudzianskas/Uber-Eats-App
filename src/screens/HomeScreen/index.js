@@ -1,10 +1,31 @@
-import React, {useState} from 'react';
-import {Text, View, StyleSheet, FlatList} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Text, View, StyleSheet, FlatList, ActivityIndicator} from 'react-native';
 import Restaurants from "../../assets/data/restaurants.json";
 import RestaurantItem from "../../components/RestaurantItem";
+import {DataStore} from "aws-amplify";
+import {Restaurant} from "../../models";
 
 const HomeScreen = () => {
     const [restaurants, setRestaurants] = useState([]);
+
+    const fetchRestaurants = async () => {
+        const response = await DataStore.query (Restaurant);
+        setRestaurants(response) ;
+    };
+
+
+    useEffect(() => {
+        fetchRestaurants();
+    }, []);
+
+    if(!restaurants) {
+        return (
+            <View className="items-center justify-center h-screen -mt-16">
+                <Text className="text-xl mb-4 font-bold text-gray-900">Restaurants loading 😅</Text>
+                <ActivityIndicator size={'large'} />
+            </View>
+        )
+    }
 
     return (
         <View className="mx-4">
