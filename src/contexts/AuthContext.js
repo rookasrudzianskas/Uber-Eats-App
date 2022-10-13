@@ -19,6 +19,7 @@ const AuthContextProvider = ({children}) => {
             authUser,
             dbUser,
             sub,
+            setDbUser
         }}>
             {children}
         </AuthContext.Provider>
