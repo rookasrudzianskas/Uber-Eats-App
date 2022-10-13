@@ -8,9 +8,13 @@ import {useOrderContext} from "../../contexts/OrderContext";
 
 const Basket = () => {
     const {restaurant, basketDishes, totalPrice} = useBasketContext();
-    const {} = useOrderContext();
-
+    const { createOrder } = useOrderContext();
     const navigation = useNavigation();
+    const onCreateOrder = async () => {
+        await createOrder();
+        navigation.navigate('Order')
+    }
+
     if(!restaurant) {
         return (
             <View className="items-center justify-center h-screen -mt-16">
@@ -54,7 +58,7 @@ const Basket = () => {
             </View>
 
 
-            <TouchableOpacity activeOpacity={0.7} className="absolute bottom-28 right-1 left-1 flex-row items-center justify-center mx-4 bg-black py-4 rounded-sm">
+            <TouchableOpacity onPress={onCreateOrder} activeOpacity={0.7} className="absolute bottom-28 right-1 left-1 flex-row items-center justify-center mx-4 bg-black py-4 rounded-sm">
                 <Text className="text-white text-[15px] font-semibold">Create Order ~ ${(totalPrice).toFixed(2)}</Text>
             </TouchableOpacity>
         </View>

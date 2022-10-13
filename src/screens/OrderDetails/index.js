@@ -1,10 +1,7 @@
-import React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
-import orders from '../../assets/data/orders.json';
-import {FontAwesome} from "@expo/vector-icons";
+import React, {useEffect, useState} from 'react';
+import {Text, View, StyleSheet, Image, ActivityIndicator} from 'react-native';
 
-const OrderDetailsHeader = () => {
-    const order = orders[0];
+const OrderDetailsHeader = ({order}) => {
     return (
         <View>
             <>
